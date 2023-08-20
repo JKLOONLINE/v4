@@ -271,11 +271,11 @@ netfilter-persistent reload
 # download script
 cd /usr/bin
 # menu
-wget -O menu "https://raw.githubusercontent.com/bracoli/v4/main/menu/menu.sh"
-wget -O menu-vmess "https://raw.githubusercontent.com/bracoli/v4/main/menu/menu-vmess.sh"
-wget -O menu-vless "https://raw.githubusercontent.com/bracoli/v4/main/menu/menu-vless.sh"
-wget -O running "https://raw.githubusercontent.com/bracoli/v4/main/menu/running.sh"
-wget -O clearcache "https://raw.githubusercontent.com/bracoli/v4/main/menu/clearcache.sh"
+wget -O menu "https://raw.githubusercontent.com/JKLOONLINE/v4/main/menu/menu.sh"
+wget -O menu-vmess "https://raw.githubusercontent.com/JKLOONLINE/v4/main/menu/menu-vmess.sh"
+wget -O menu-vless "https://raw.githubusercontent.com/JKLOONLINE/v4/main/menu/menu-vless.sh"
+wget -O running "https://raw.githubusercontent.com/JKLOONLINE/v4/main/menu/running.sh"
+wget -O clearcache "https://raw.githubusercontent.com/JKLOONLINE/v4/main/menu/clearcache.sh"
 wget -O menu-trgo "https://raw.githubusercontent.com/bracoli/v4/main/menu/menu-trgo.sh"
 wget -O menu-trojan "https://raw.githubusercontent.com/bracoli/v4/main/menu/menu-trojan.sh"
 
