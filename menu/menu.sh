@@ -62,6 +62,7 @@ fi
 uptime="$(uptime -p | cut -d " " -f 2-10)"
 # Download
 #Download/Upload today
+Repo1="https://raw.githubusercontent.com/Jengkolonline/izinn/main/"
 dtoday="$(vnstat -i eth0 | grep "today" | awk '{print $2" "substr ($3, 1, 1)}')"
 utoday="$(vnstat -i eth0 | grep "today" | awk '{print $5" "substr ($6, 1, 1)}')"
 ttoday="$(vnstat -i eth0 | grep "today" | awk '{print $8" "substr ($9, 1, 1)}')"
@@ -89,35 +90,37 @@ freq=$( awk -F: ' /cpu MHz/ {freq=$2} END {print freq}' /proc/cpuinfo )
 tram=$( free -m | awk 'NR==2 {print $2}' )
 uram=$( free -m | awk 'NR==2 {print $3}' )
 fram=$( free -m | awk 'NR==2 {print $4}' )
+export MYIP=$( curl -s https://ipinfo.io/ip/ )
+Name=$(curl -sS ${Repo1}ip | grep $MYIP | awk '{print $2}')
+Exp=$(curl -sS ${Repo1}ip | grep $MYIP | awk '{print $3}')
 clear 
 echo -e "\e[33m                                                            \e[0m"
-echo -e "\e[33m ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
-echo -e "	Lemot ? Rebuild lagilah..."
-echo -e "\e[33m ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
-echo -e " █████╗ ██████╗  █████╗ ███╗   ███╗    ███████╗██╗     ██╗ █████╗" 
-echo -e "██╔══██╗██╔══██╗██╔══██╗████╗ ████║    ██╔════╝██║     ██║██╔══██╗"
-echo -e "███████║██║  ██║███████║██╔████╔██║    ███████╗██║     ██║███████║"
-echo -e "██╔══██║██║  ██║██╔══██║██║╚██╔╝██║    ╚════██║██║██   ██║██╔══██║"
-echo -e "██║  ██║██████╔╝██║  ██║██║ ╚═╝ ██║    ███████║██║╚█████╔╝██║  ██║"
-echo -e "╚═╝  ╚═╝╚═════╝ ╚═╝  ╚═╝╚═╝     ╚═╝    ╚══════╝╚═╝ ╚════╝ ╚═╝  ╚═╝"
-echo -e "\e[33m ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
+echo -e " \033[31m##########\033[33m##########\033[32m##########\033[34m##########\033[35m##########\033[36m##########\e[0m"
+echo -e " \033[35m╭══════════════════════════════════════════════════════════╮\e[0m"
+echo -e " \033[35m│$NC\033[33m                  JENGKOLONLINE TUNELING                  $NC\033[35m│\e[0m"
+echo -e " \033[35m╰══════════════════════════════════════════════════════════╯\e[0m"
 echo -e "                                                                                         "
-echo -e "\e[33m Operating System     \e[0m:  "`hostnamectl | grep "Operating System" | cut -d ' ' -f5-`	
-echo -e "\e[33m Total Amount Of RAM  \e[0m:  $tram MB"
-echo -e "\e[33m System Uptime        \e[0m:  $uptime "
-echo -e "\e[33m Isp Name             \e[0m:  $ISP"
-echo -e "\e[33m Domain               \e[0m:  $domain"	
-echo -e "\e[33m Ip Vps               \e[0m:  $IPVPS"	
-echo -e "\e[33m ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
-echo -e "                 • SCRIPT MENU •                 "
-echo -e "\e[33m ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
+echo -e " \e[33m Operating System     \e[0m:  "`hostnamectl | grep "Operating System" | cut -d ' ' -f5-`	
+echo -e " \e[33m Total Amount Of RAM  \e[0m:  $tram MB"
+echo -e " \e[33m System Uptime        \e[0m:  $uptime "
+echo -e " \e[33m Isp Name             \e[0m:  $ISP"
+echo -e " \e[33m Domain               \e[0m:  $domain"	
+echo -e " \e[33m Ip Vps               \e[0m:  $IPVPS"	
+echo -e " \033[35m╭══════════════════════════════════════════════════════════╮\e[0m"
+echo -e " \033[35m│$NC\033[33m                  JENGKOLONLINE TUNELING                  $NC\033[35m│\e[0m"
+echo -e " \033[35m╰══════════════════════════════════════════════════════════╯\e[0m"
 echo -e " [\e[36m•1\e[0m] SSH & OpenVPN Menu  [\e[36m•5\e[0m] SYSTEM Menu"
 echo -e " [\e[36m•2\e[0m] Vmess Menu          [\e[36m•6\e[0m] Status Service"
 echo -e " [\e[36m•3\e[0m] Vless Menu          [\e[36m•7\e[0m] Clear RAM Cache"
 echo -e " [\e[36m•4\e[0m] Trojan Go Menu      [\e[36m•8\e[0m] Trojan GFW Menu"                  
 echo -e   ""
+echo -e " \033[34m╭══════════════════════════════════════════════════════════╮${NC}"
+echo -e " \033[34m│$NC \e[31m Client Name${NC}   :  ${putih}$Name${NC}                                       $NC\033[34m│$NC"
+echo -e " \033[34m│$NC \e[33m Exp Script${NC}    :  ${putih}$Exp${NC}                                       $NC\033[34m│$NC"
+echo -e " \033[34m│$NC \e[32m Version${NC}       :  ${putih}2.6.6${NC}                                  $NC\033[34m│$NC"
+echo -e " \033[34m╰══════════════════════════════════════════════════════════╯${NC}"
+echo -e " \033[31m##########\033[33m##########\033[32m##########\033[34m##########\033[35m##########\033[36m##########\e[0m"
 echo -e   " Press x or [ Ctrl+C ] • To-Exit-Script"
-echo -e   ""
 echo -e   ""
 read -p " Select menu :  "  opt
 echo -e   ""
